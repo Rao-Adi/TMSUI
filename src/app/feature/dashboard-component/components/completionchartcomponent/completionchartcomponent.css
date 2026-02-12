@@ -1,0 +1,18 @@
+
+
+/* CIRCLE */
+
+.circle{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  background:#f97316;
+  color:white;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:26px;
+  margin-top:10px;
+}

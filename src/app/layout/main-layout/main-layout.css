@@ -1,0 +1,47 @@
+.layout{
+  display:flex;
+  height:100vh;
+}
+
+
+/* RIGHT SIDE */
+.page{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  background:#f1f5f9;
+}
+
+
+
+
+/* SEARCH */
+.search input{
+  height:38px;
+  width:240px;
+  border-radius:8px;
+  border:1px solid #e5e7eb;
+  padding:0 12px;
+}
+
+input{
+    flex:1;
+    height:40px;
+    border-radius:8px;
+    border:1px solid #e5e7eb;
+    padding:0 10px;
+}
+
+
+/* ICON */
+.icon-btn{
+  cursor:pointer;
+  font-size:18px;
+}
+
+
+
+/* PAGE BODY */
+.page-content{ 
+  overflow:auto;
+}

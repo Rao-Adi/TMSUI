@@ -1,0 +1,56 @@
+
+/* HEADER */
+.topbar{
+  height:70px;
+  background:white;
+  border-bottom:1px solid #e5e7eb;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:0 24px;
+}
+
+/* RIGHT SECTION */
+.topbar-right{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+
+/* SEARCH */
+
+.search {
+    height: 38px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    padding: 0 10px;
+}
+
+/* USER */
+.user{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:500;
+}
+
+.avatar{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  background:#6366f1;
+  color:white;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+
+
+.page-title{
+  font-size:22px;
+  font-weight:600;
+}

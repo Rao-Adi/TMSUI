@@ -1,0 +1,103 @@
+<div class="sidebar">
+  <!-- LOGO -->
+  <div class="logo">
+    <div class="logo-icon">
+      <mat-icon>bolt</mat-icon>
+    </div>
+    <span>Stride</span>
+  </div>
+
+  <!-- SEARCH -->
+  <div class="search-box">
+    <mat-icon>search</mat-icon>
+    <input placeholder="Search..." />
+  </div>
+
+  <!-- MENU -->
+  <ul class="menu">
+    @for (item of menu; track item) {
+      <li>
+        <div
+          class="menu-item"
+          [class.active]="item.active"
+          (click)="item.children ? toggle(item) : null"
+          [routerLink]="item.route"
+        >
+          <div class="left">
+            <mat-icon>{{ item.icon }}</mat-icon>
+            <span>{{ item.label }}</span>
+          </div>
+
+          @if (item.children) {
+            <mat-icon class="arrow">
+              {{ item.expanded ? 'expand_more' : 'chevron_right' }}
+            </mat-icon>
+          }
+        </div>
+
+        <!-- CHILDREN -->
+        @if (item.children && item.expanded) {
+          <ul class="submenu">
+            @for (child of item.children; track child) {
+              <li>
+                <div
+                  class="menu-item child"
+                  (click)="child.children ? toggle(child) : null"
+                  [routerLink]="child.route"
+                >
+                  <div class="left">
+                    <mat-icon class="child-icon">
+                      {{ child.icon || 'description' }}
+                    </mat-icon>
+
+                    {{ child.label }}
+                  </div>
+
+                  @if (child.children) {
+                    <mat-icon class="arrow">
+                      {{ child.expanded ? 'expand_more' : 'chevron_right' }}
+                    </mat-icon>
+                  }
+                </div>
+
+                <!-- LEVEL 3 -->
+                @if (child.children && child.expanded) {
+                  <ul class="submenu">
+                    @for (grand of child.children; track grand) {
+                      <li class="menu-item grand" [routerLink]="grand.route">
+                        <mat-icon>description</mat-icon>
+                        {{ grand.label }}
+                      </li>
+                    }
+                  </ul>
+                }
+              </li>
+            }
+          </ul>
+        }
+      </li>
+    }
+  </ul>
+
+  <!-- BOTTOM -->
+  <div class="sidebar-bottom">
+    <div class="bottom-item">
+      <mat-icon>delete</mat-icon>
+      Trash
+    </div>
+
+    <div class="bottom-item">
+      <mat-icon>settings</mat-icon>
+      Settings
+    </div>
+
+    <div class="user">
+      <div class="avatar">AS</div>
+
+      <div>
+        <strong>Admin Stride</strong>
+        <div class="logout">Logout</div>
+      </div>
+    </div>
+  </div>
+</div>

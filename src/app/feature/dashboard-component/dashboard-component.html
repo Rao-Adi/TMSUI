@@ -1,0 +1,60 @@
+<div class="dashboard-page">
+  <!-- FILTER BAR -->
+  <div class="filters">
+    <select>
+      <option>All Spaces</option>
+    </select>
+
+    <select>
+      <option>All Folders</option>
+    </select>
+
+    <select>
+      <option>All Boards</option>
+    </select>
+
+    <select>
+      <option>All Assignees</option>
+    </select>
+
+    <input placeholder="Search by task name..." />
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-grid">
+    <div class="card stat">
+      <span>My Open Tasks</span>
+      <h1 class="green">0</h1>
+    </div>
+
+    <div class="card stat">
+      <span>Tasks Past Due Date</span>
+      <h1 class="red">0</h1>
+    </div>
+
+    <div class="card stat">
+      <span>Tasks Due in Next 7 Days</span>
+      <h1 class="green">0</h1>
+    </div>
+
+    <div class="card stat">
+      <span>Total Tasks in View</span>
+      <h1 class="green">16</h1>
+    </div>
+  </div>
+
+  <!-- LOWER GRID -->
+  <div class="lower-grid">
+    <!-- Meetings -->
+    <app-meetingcard-component></app-meetingcard-component>
+
+    <!-- Mentions -->
+    <div class="card center">
+      <h3>My Mentions</h3>
+      <p>No one has mentioned you recently.</p>
+    </div>
+
+    <!-- Completion -->
+    <app-completionchartcomponent></app-completionchartcomponent>
+  </div>
+</div>
