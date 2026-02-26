@@ -1,0 +1,19 @@
+.board {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  overflow-x: auto;
+  align-items: flex-start;
+  height: calc(100vh - 160px);
+  background: #f4f5f7;
+}
+
+/* Horizontal Scroll */
+.board::-webkit-scrollbar {
+  height: 8px;
+}
+
+.board::-webkit-scrollbar-thumb {
+  background: #d0d4db;
+  border-radius: 10px;
+}

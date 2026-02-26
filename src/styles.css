@@ -5282,3 +5282,18 @@ body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+
+.cdk-drag-preview {
+  border-radius: 6px;
+  background: white;
+  border: 1px solid #dfe1e6;
+}
+
+.cdk-drag-placeholder {
+  opacity: 0.4;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms ease;
+}

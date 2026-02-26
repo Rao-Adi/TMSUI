@@ -1,6 +1,4 @@
 import { Component, EmbeddedViewRef, Input, Output, TemplateRef, ViewChild } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { EventEmitter } from 'stream';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router'; // This import is correct
 import { MatIconModule } from '@angular/material/icon';
@@ -35,6 +33,11 @@ export const SIDEBAR_MENU: SidebarItem[] = [
     label: 'Chat',
     icon: 'message-circle',
     route: '/chat',
+  },
+   {
+    label: 'Task Board',
+    icon: 'task-board',
+    route: '/task-board',
   },
   {
     label: 'Admin',
@@ -98,7 +101,7 @@ export interface MenuItem {
 
 @Component({
   selector: 'app-sidebar',
-  imports: [RouterOutlet, RouterModule, CommonModule, MatIconModule], // Added CommonModule for ngIf/ngFor if needed
+  imports: [RouterModule, CommonModule, MatIconModule], // Added CommonModule for ngIf/ngFor if needed
   templateUrl: './sidebar.html',
   styleUrls: ['./sidebar.css'],
 })

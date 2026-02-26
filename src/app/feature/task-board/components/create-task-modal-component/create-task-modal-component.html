@@ -1,0 +1,23 @@
+<div class="modal">
+
+  <h3>Create Task</h3>
+
+  <input [(ngModel)]="task.title" placeholder="Title">
+
+  <select [(ngModel)]="task.priority">
+    <option>Low</option>
+    <option>Medium</option>
+    <option>High</option>
+  </select>
+
+  <input type="number"
+    [(ngModel)]="task.storyPoints"
+    placeholder="Story Points">
+
+  <input type="date"
+    [(ngModel)]="task.dueDate">
+
+  <button (click)="create()">Create</button>
+  <button (click)="close.emit()">Cancel</button>
+
+</div>

@@ -1,0 +1,70 @@
+<div class="gantt-backdrop">
+  <div class="gantt-modal">
+    <!-- HEADER -->
+    <div class="gantt-header">
+      <span>Gantt Chart</span>
+      <button class="close-btn" (click)="close.emit()">✕</button>
+    </div>
+
+    <!-- VIEW CONTROLS -->
+    <div class="timeline-top">
+      <div class="title">Project Timeline (Gantt)</div>
+
+      <div class="view-toggle">
+        <button [class.active]="view == 'day'" (click)="changeView('day')">Day</button>
+
+        <button [class.active]="view == 'week'" (click)="changeView('week')">Week</button>
+
+        <button [class.active]="view == 'month'" (click)="changeView('month')">Month</button>
+      </div>
+    </div>
+
+    <!-- GRID GANTT -->
+    <div
+      class="gantt-body"
+      [style.gridTemplateRows]="'40px 40px repeat(' + tasks.length + ',40px)'"
+      [style.gridTemplateColumns]="'200px repeat(' + timeline.length + ',1fr)'"
+    >
+      <!-- HEADER LEFT -->
+      <div class="task-header" style="grid-row: 1; grid-column: 1">Task Name</div>
+
+      <!-- HEADER RIGHT -->
+      <!-- MONTH HEADER -->
+      <div
+        class="month"
+        *ngFor="let m of months"
+        [style.gridRow]="1"
+        [style.gridColumn]="m.start + 2"
+        [style.gridColumnEnd]="'span ' + m.span"
+      >
+        {{ m.label }}
+      </div>
+
+      <!-- DAY HEADER -->
+      <div
+        class="day"
+        *ngFor="let d of timeline; let j = index"
+        [style.gridRow]="2"
+        [style.gridColumn]="j + 2"
+      >
+        {{ d.label }}
+      </div>
+
+      <!-- TASK ROWS -->
+      <ng-container *ngFor="let task of tasks; let i = index">
+        <!-- TASK NAME -->
+        <div class="task-row" [style.gridRow]="i + 3" style="grid-column: 1">
+          {{ task.title }}
+        </div>
+
+        <!-- TASK BAR -->
+        <div
+          class="task-bar"
+          [style.gridRow]="i + 3"
+          [style.gridColumnStart]="task.gridStart + 1"
+          [style.gridColumnEnd]="'span ' + task.gridSpan"
+        ></div>
+      </ng-container>
+    </div>
+  </div>
+</div>

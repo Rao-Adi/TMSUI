@@ -1,0 +1,18 @@
+<div class="card {{ task.priority }}" cdkDrag>
+  <!-- DRAG HANDLE -->
+  <div class="drag-handle" cdkDragHandle>☰</div>
+
+  <!-- CLICKABLE TITLE -->
+  <h4 class="task-title" (click)="openTask()">
+    {{ task.title }}
+  </h4>
+
+  <div class="meta">Priority: {{ task.priority }}</div>
+
+  <div class="meta">Story Points: {{ task.storyPoints }}</div>
+
+  <div class="meta">
+    Due Date:
+    {{ task.dueDate | date: 'dd MMM yyyy' }}
+  </div>
+</div>

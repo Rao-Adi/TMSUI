@@ -22,6 +22,11 @@ export const routes: Routes = [
         path: 'chat',
         component: ChatComponent,
       },
+      {
+        path: 'task-board',
+        loadChildren: () =>
+          import('./feature/task-board/task-board.module').then((m) => m.TaskBoardModule),
+      },
       /* Dashboard */
       //   {
       //     path: 'dashboard',

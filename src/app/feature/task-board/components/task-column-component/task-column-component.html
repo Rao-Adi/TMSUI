@@ -1,0 +1,20 @@
+<div class="column">
+  <h3>{{ column.name }}</h3>
+
+  <div
+    cdkDropList
+    [cdkDropListData]="column.tasks"
+    (cdkDropListDropped)="drop($event)"
+    class="task-list"
+  >
+    <app-task-card-component
+      *ngFor="let task of column.tasks"
+      [task]="task"
+      (viewTask)="viewTask.emit($event)"
+      cdkDrag
+    >
+    </app-task-card-component>
+  </div>
+
+  <button class="add-task-btn" (click)="createNewTask()">+ New Task</button>
+</div>

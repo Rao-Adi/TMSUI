@@ -1,0 +1,26 @@
+<app-taskboard-header (openGantt)="showGantt = true"> </app-taskboard-header>
+
+<app-gantt-chart *ngIf="showGantt" [tasks]="getAllTasks()" (close)="showGantt = false">
+</app-gantt-chart>
+
+<div class="board" cdkDropListGroup>
+  <app-task-column-component
+    *ngFor="let column of columns"
+    [column]="column"
+    (taskDropped)="onTaskDropped($event)"
+    (createTask)="openCreateTask($event)"
+    (viewTask)="openDrawer($event)"
+  >
+  </app-task-column-component>
+</div>
+
+<app-create-task-modal-component
+  *ngIf="showModal"
+  [statusId]="selectedStatusId"
+  (close)="showModal = false"
+  (taskCreated)="addTask($event)"
+>
+</app-create-task-modal-component>
+
+<app-task-detaildrawer *ngIf="showDrawer" [task]="selectedTask" (close)="showDrawer = false">
+</app-task-detaildrawer>

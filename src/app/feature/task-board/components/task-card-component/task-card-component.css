@@ -1,0 +1,75 @@
+.card {
+  background: white;
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  cursor: grab;
+  border: 1px solid #dfe1e6;
+  position: relative;
+  transition: 0.2s;
+}
+
+.card:hover {
+  background: #fafbfc;
+}
+
+/* LEFT PRIORITY BORDER */
+.card.High {
+  border-left: 4px solid #de350b;
+}
+
+.card.Medium {
+  border-left: 4px solid #ff991f;
+}
+
+.card.Low {
+  border-left: 4px solid #36b37e;
+}
+
+/* Title */
+.card h4 {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+/* Meta Info */
+.meta {
+  font-size: 12px;
+  color: #5e6c84;
+  line-height: 18px;
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .card h4 {
+    font-size: 13px;
+  }
+}
+.card{
+  background:white;
+  border-radius:6px;
+  padding:10px;
+  margin-bottom:10px;
+  border:1px solid #dfe1e6;
+  position:relative;
+}
+
+/* DRAG HANDLE */
+.drag-handle{
+  position:absolute;
+  top:5px;
+  right:8px;
+  cursor:grab;
+  font-size:16px;
+  color:#5e6c84;
+}
+
+/* TITLE CLICKABLE */
+.task-title{
+  cursor:pointer;
+}
+
+.task-title:hover{
+  text-decoration:underline;
+}

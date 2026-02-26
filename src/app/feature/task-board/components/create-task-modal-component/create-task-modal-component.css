@@ -1,0 +1,48 @@
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 380px;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 18px;
+  border-radius: 8px;
+  z-index: 1000;
+  border: 1px solid #dfe1e6;
+  box-shadow: 0 8px 24px rgba(149,157,165,0.2);
+}
+
+.modal h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.modal input,
+.modal select {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 7px;
+  border: 1px solid #dfe1e6;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.modal button {
+  margin-right: 6px;
+  padding: 6px 12px;
+  border: none;
+  background: #0052cc;
+  color: white;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.modal button:hover {
+  background: #0747a6;
+}
+/* Mobile */
+@media (max-width: 576px) {
+  .modal {
+    width: 90%;
+  }
+}
